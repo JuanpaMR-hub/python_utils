@@ -2,8 +2,8 @@ import os
 import csv
 os.system('cls')
 
-seccion = "151-3"
-asignatura = "TI3032"
+seccion = "890-1"
+asignatura = "DVA303"
 path = os.path.abspath(f"archivos/{asignatura}/{seccion}")
 
 def cambiar_nombre_carpetas(path):
@@ -38,9 +38,9 @@ def exportar_alumnos_csv(asignatura:str,seccion:str,path:str) -> bool:
     
     with open (f"archivos/csv/{asignatura}/{seccion}.csv", 'w',encoding="utf-8", newline='') as f:
         w = csv.writer(f)
-        w.writerow(['Alumno'])
+        w.writerow(['Alumno','Sección'])
         for alumno in alumnos:
-            w.writerow([alumno])
+            w.writerow([alumno,seccion])
             
             
 exportar_alumnos_csv(asignatura,seccion,path)
